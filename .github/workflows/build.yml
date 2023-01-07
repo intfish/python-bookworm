@@ -20,7 +20,7 @@ jobs:
 
       - name: Generate Dockerfile
         run: |
-          cp -v "$(find docker-python -maxdepth 1 -type d -regex '^python/3\.[0-9]+' | sort -V --reverse | head -n 1)/slim-bullseye/Dockerfile" Dockerfile
+          cp -v "$(find docker-python -maxdepth 1 -type d -regex '^docker-python/3\.[0-9]+' | sort -V --reverse | head -n 1)/slim-bullseye/Dockerfile" Dockerfile
           sed -i 's/FROM debian:bullseye-slim/FROM debian:bookworm-slim/g' Dockerfile
 
       - name: Login GHCR
